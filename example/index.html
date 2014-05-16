@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div id="test"></div>
+
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../src/d3.promise.js"></script>
+    <script>
+      d3.promise.csv('data/test.csv').then(function(data){
+        document.getElementById('test').innerHTML = data.map(function(row){
+          return JSON.stringify(row);
+        }).join('<br>');
+      });
+    </script>
+  </body>
+</html>
