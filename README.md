@@ -6,7 +6,7 @@ Make d3 data functions use promises instead of callbacks
 This library uses ES6 Promise. (http://www.html5rocks.com/en/tutorials/es6/promises/)
 To bring browsers that lack a complete promises implementation up to spec compliance, or add promises to other browsers and Node.js, check out the [polyfill](https://github.com/jakearchibald/ES6-Promises#readme) (2k gzipped).
 
-This library can be importe using <script> as well as AMD (such as RequireJS).
+This library can be imported using `<script>` as well as AMD (such as RequireJS).
 
 ### Example Usage
 
