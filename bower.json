@@ -6,7 +6,7 @@
     "@kristw"
   ],
   "description": "d3.csv & friends that return promises instead of accepting callbacks",
-  "main": "d3.promise.js",
+  "main": "src/d3.promise.js",
   "moduleType": [
     "amd",
     "es6",
