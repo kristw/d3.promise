@@ -26,6 +26,13 @@ promise.then(function(data){}, function(error){});
 var promise = d3.promise.json('test.json')
 promise.then(function(data){}, function(error){});
 
+var promise = d3.promise.html('test.html')
+promise.then(function(data){}, function(error){});
+
+var promise = d3.promise.text('test.txt')
+promise.then(function(data){}, function(error){});
+
 var promise = d3.promise.xml('test.xml')
 promise.then(function(data){}, function(error){});
+
 ```
