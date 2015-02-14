@@ -38,7 +38,7 @@ function (d3) {
 
     var module = {};
 
-    ['csv', 'tsv', 'json', 'xml'].forEach(function(fnName){
+    ['csv', 'tsv', 'json', 'xml', 'text', 'html'].forEach(function(fnName){
       module[fnName] = promisify(d3, d3[fnName]);
     });
 

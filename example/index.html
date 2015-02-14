@@ -1,14 +1,23 @@
 <html>
   <body>
-    <div id="test"></div>
-
     <script src="../bower_components/d3/d3.min.js"></script>
     <script src="../src/d3.promise.js"></script>
     <script>
+      // Create <div>
+      ['csv', 'tsv', 'json', 'xml', 'text', 'html'].forEach(function(fnName){
+        var div = document.createElement('div');
+        div.setAttribute('id', 'test-'+fnName);
+        document.body.appendChild(div);
+      });
+
       d3.promise.csv('data/test.csv').then(function(data){
-        document.getElementById('test').innerHTML = data.map(function(row){
+        document.getElementById('test-csv').innerHTML = data.map(function(row){
           return JSON.stringify(row);
         }).join('<br>');
+      });
+
+      d3.promise.text('data/test.csv').then(function(data){
+        document.getElementById('test-text').innerHTML = data;
       });
     </script>
   </body>
