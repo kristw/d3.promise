@@ -1,0 +1,18 @@
+{
+  "name": "d3.promise",
+  "version": "0.2.1",
+  "description": "d3.csv & friends that return promises instead of accepting callbacks",
+  "license": "Apache v2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kristw/d3.promise"
+  },
+  "homepage": "https://github.com/kristw/d3.promise",
+  "keywords": [
+    "d3.promise",
+    "d3"
+  ],
+  "dependencies": {
+    "d3": "~3.4.6"
+  }
+}
