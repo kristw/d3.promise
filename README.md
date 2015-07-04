@@ -9,8 +9,13 @@ To bring browsers that lack a complete promises implementation up to spec compli
 ### Installation options
 
 ```
-bower install d3.promise
-npm install d3.promise
+bower install d3.promise --save
+```
+
+or
+
+```
+npm install d3.promise --save
 ```
 
 This library can be imported using standard `<script>` as well as AMD (such as RequireJS).

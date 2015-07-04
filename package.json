@@ -2,6 +2,7 @@
   "name": "d3.promise",
   "version": "0.2.1",
   "description": "d3.csv & friends that return promises instead of accepting callbacks",
+  "main": "dist/d3.promise.min.js",
   "license": "Apache v2",
   "repository": {
     "type": "git",
