@@ -20,6 +20,8 @@ npm install d3.promise --save
 
 This library can be imported using standard `<script>` as well as AMD (such as RequireJS).
 
+Note: Since v1.0.0, the minified output is move from ```src/``` to ```dist/```. 
+
 ### Example Usage
 
 ```
