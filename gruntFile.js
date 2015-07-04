@@ -57,7 +57,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/<%= yeoman.outputName %>.min.js': [
-            '<%= yeoman.src %>/<%= yeoman.outputName %>.js'
+            '<%= yeoman.dist %>/<%= yeoman.outputName %>.js'
           ]
         },
         options:{
