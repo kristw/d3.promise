@@ -1,1 +1,0 @@
-uglifyjs src/d3.promise.js -m -c > src/d3.promise.min.js
