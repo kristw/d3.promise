@@ -18,9 +18,9 @@ or
 npm install d3.promise --save
 ```
 
-This library can be imported using standard `<script>` as well as AMD (such as RequireJS).
+This library can be imported using standard `<script>` as well as CommonJS (node.js/browserify) and AMD (such as RequireJS).
 
-Note: Since v1.0.0, the minified output was move from ```src/``` to ```dist/```. 
+Note: Since v1.0.0, the minified output was move from ```src/``` to ```dist/```.
 
 ### Example Usage
 
