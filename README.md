@@ -44,3 +44,5 @@ var promise = d3.promise.xml('test.xml')
 promise.then(function(data){}, function(error){});
 
 ```
+
+Copyright 2015 Krist Wongsuphasawat. Licensed under the Apache License, Version 2.0
