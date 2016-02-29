@@ -1,12 +1,20 @@
 // Define module using Universal Module Definition pattern
-// https://github.com/umdjs/umd/blob/master/amdWeb.js
+// https://github.com/umdjs/umd/blob/master/returnExports.js
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // Support AMD. Register as an anonymous module.
     // EDIT: List all dependencies in AMD style
     define(['d3'], factory);
-  } else {
+  }
+  else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    // EDIT: Pass dependencies to factory function
+    module.exports = factory(require('d3'));
+  }
+  else {
     // No AMD. Set module as a global variable
     // EDIT: Pass dependencies to factory function
     root.d3.promise = factory(root.d3);
@@ -55,4 +63,3 @@ function (d3) {
   // END code for this module
   //---------------------------------------------------
 }));
-
