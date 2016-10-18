@@ -45,4 +45,4 @@ promise.then(function(data){}, function(error){});
 
 ```
 
-Copyright 2015 Krist Wongsuphasawat. Licensed under the Apache License, Version 2.0
+Copyright 2015-2016 Krist Wongsuphasawat. Licensed under the Apache License, Version 2.0
