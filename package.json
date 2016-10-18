@@ -28,7 +28,6 @@
     "uglifyjs": "^2.4.10"
   },
   "scripts": {
-    "preversion": "npm test",
     "version": "npm run build && git add -A dist",
     "postversion": "git push ; git push --tags; pkgfiles",
     "prepublish": "pkgfiles",
