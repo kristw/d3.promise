@@ -14,23 +14,25 @@
     "d3"
   ],
   "dependencies": {
-    "d3": "~3.4.6"
+    "d3-request": "^1.0.2"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-copy": "~0.8.0",
-    "grunt-contrib-uglify": "~0.9.1",
-    "load-grunt-config": "~0.17.1",
-    "time-grunt": "~1.2.1",
-    "pkgfiles": "^2.3.0"
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-plugin-istanbul": "^2.0.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babelrc-rollup": "^3.0.0",
+    "pkgfiles": "^2.3.0",
+    "rollup": "^0.34.7",
+    "rollup-plugin-babel": "^2.6.1",
+    "uglifyjs": "^2.4.10"
   },
   "scripts": {
-    "build": "grunt build",
     "preversion": "npm test",
     "version": "npm run build && git add -A dist",
     "postversion": "git push ; git push --tags; pkgfiles",
-    "prepublish": "pkgfiles"
+    "prepublish": "pkgfiles",
+    "rollup": "rollup -c",
+    "build": "npm run rollup && uglifyjs dist/d3.promise.js -m -c > dist/d3.promise.min.js"
   }
 }

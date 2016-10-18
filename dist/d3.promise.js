@@ -1,65 +1,35 @@
-// Define module using Universal Module Definition pattern
-// https://github.com/umdjs/umd/blob/master/returnExports.js
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('d3-request')) :
+  typeof define === 'function' && define.amd ? define(['d3-request'], factory) :
+  (global.d3 = global.d3 || {}, global.d3.promise = factory(global.d3));
+}(this, (function (d3) { 'use strict';
 
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // Support AMD. Register as an anonymous module.
-    // EDIT: List all dependencies in AMD style
-    define(['d3'], factory);
-  }
-  else if (typeof exports === 'object') {
-    // Node. Does not work with strict CommonJS, but
-    // only CommonJS-like environments that support module.exports,
-    // like Node.
-    // EDIT: Pass dependencies to factory function
-    module.exports = factory(require('d3'));
-  }
-  else {
-    // No AMD. Set module as a global variable
-    // EDIT: Pass dependencies to factory function
-    root.d3.promise = factory(root.d3);
-  }
-}(this,
-//EDIT: The dependencies are passed to this function
-function (d3) {
-  //---------------------------------------------------
-  // BEGIN code for this module
-  //---------------------------------------------------
-
-  var d3Promise = (function(){
-
-    function promisify(caller, fn){
-      return function(){
-        var args = Array.prototype.slice.call(arguments);
-        return new Promise(function(resolve, reject){
-          var callback = function(error, data){
-            if(error){
-              reject(Error(error));
-              return;
-            }
-            resolve(data);
-          };
-          fn.apply(caller, args.concat(callback));
-        });
-      };
+function promisify(caller, fn) {
+  return function () {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    var module = {};
-
-    ['csv', 'tsv', 'json', 'xml', 'text', 'html'].forEach(function(fnName){
-      module[fnName] = promisify(d3, d3[fnName]);
+    return new Promise(function (resolve, reject) {
+      var callback = function callback(error, data) {
+        if (error) {
+          reject(Error(error));
+          return;
+        }
+        resolve(data);
+      };
+      fn.apply(caller, args.concat(callback));
     });
+  };
+}
 
-    return module;
-  }());
+var module$1 = {};
 
-  // append to d3
-  d3.promise = d3Promise;
+['csv', 'tsv', 'json', 'xml', 'text', 'html'].forEach(function (fnName) {
+  module$1[fnName] = promisify(d3, d3[fnName]);
+});
 
-  // return module
-  return d3Promise;
+return module$1;
 
-  //---------------------------------------------------
-  // END code for this module
-  //---------------------------------------------------
-}));
+})));
+//# sourceMappingURL=d3.promise.js.map
