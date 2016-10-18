@@ -1,10 +1,12 @@
 d3.promise
 ==========
 
-Make d3 data functions use promises instead of callbacks
+Make d3 data functions use promises instead of callbacks.
 
 This library uses ES6 Promise. (http://www.html5rocks.com/en/tutorials/es6/promises/)
 To bring browsers that lack a complete promises implementation up to spec compliance, or add promises to other browsers and Node.js, check out the [polyfill](https://github.com/jakearchibald/ES6-Promises#readme) (2k gzipped).
+
+Note: v2.0.0 onwards supports D3 v4. For D3 v3, please use v1.x.x.
 
 ### Installation options
 
